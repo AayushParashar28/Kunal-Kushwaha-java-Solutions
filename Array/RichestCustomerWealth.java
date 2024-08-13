@@ -11,8 +11,9 @@ public class RichestCustomerWealth {
         int m = s.nextInt();
 
         int[][] arr = new int[n][m];
-        for(int i = 0 ; i < arr.length ; i++){
-            for(int j = 0 ; j < arr[i].length ; j++){
+        System.out.println("Enter the elements of the array:");
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < m; j++){
                 arr[i][j] = s.nextInt();
             }
         }
@@ -20,10 +21,19 @@ public class RichestCustomerWealth {
             System.out.println(Arrays.toString(arr[i]));
         }
 
-        //Richestcustomer(arr);
+        int ans  = Richestcustomer(arr);
+        System.out.println("The Richest Customer is : " +  ans);
     }
 
-    // public static int Richestcustomer(int[][] nums){
-    //     return 
-    // }
+    public static int Richestcustomer(int[][] accounts){
+        int res = 0 ;
+        for(int i = 0 ; i < accounts.length ; i++ ){
+            int temp = 0 ;
+            for(int j = 0 ; j < accounts[i].length ; j++){
+                temp += accounts[i][j];
+            }
+            res = Math.max(res,temp);
+        }
+        return res; 
+    }
 }
