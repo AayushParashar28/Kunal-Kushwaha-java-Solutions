@@ -11,5 +11,8 @@ public class MinimumCostLeetcode {
             System.out.print("Enter Array " + i + "st element :");
             arr[i] = s.nextInt();
         }
+
+        int[] ans
     }
 }
+
