@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinimumCostLeetcode {
@@ -12,7 +13,12 @@ public class MinimumCostLeetcode {
             arr[i] = s.nextInt();
         }
 
-        int[] ans
+        int[] ans = minimumCost(arr);
+        System.err.println(Arrays.toString(ans));
+    }
+
+    public static int[]  minimumCost(int[] nums){
+        return nums;
     }
 }
 
