@@ -13,11 +13,11 @@ public class MinimumCostLeetcode {
             arr[i] = s.nextInt();
         }
 
-        int[] ans = minimumCost(arr);
+        int ans = minimumCost(arr);
         System.err.println(Arrays.toString(ans));
     }
 
-    public static int[]  minimumCost(int[] nums){
+    public static int minimumCost(int[] nums){
         return nums;
     }
 }
