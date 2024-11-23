@@ -8,7 +8,7 @@ public class SQRT {
         System.out.println("Square root of " + n + " is " + Math.sqrt(n));
         
         int ans = sqrt(n);
-        System.out.println("Enter  a number : " + ans);
+        System.out.println("The Sqare Root is : " + ans);
     }
 
     public static int sqrt(int n) {
@@ -16,10 +16,11 @@ public class SQRT {
         int end = n;
         while (start < end) {
             int mid = start + (end - start) / 2;
-            if(mid * mid == n){
+            long square = (long) mid * mid;
+            if(square == n){
                 return mid;
             }
-            else if(mid*mid < n){
+            else if(square < n){
                 start = mid + 1;
             }
             else{
