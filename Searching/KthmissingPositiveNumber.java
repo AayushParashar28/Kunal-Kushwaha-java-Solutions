@@ -27,11 +27,16 @@ public class KthmissingPositiveNumber{
         int end = arr.length -1;
 
         while(start <= end){
+            int mid = start + (end - start)/2;
 
-            if(arr[mid])
-
+            if(arr[mid] - mid - 1< k){
+                start = mid + 1;
+            }
+            else{
+                end = mid -1;
+            }
         }
 
-        return end;
+        return start + k;
     }
 }
