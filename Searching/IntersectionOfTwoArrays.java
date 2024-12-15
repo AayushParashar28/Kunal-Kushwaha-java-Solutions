@@ -27,8 +27,19 @@ public class IntersectionOfTwoArrays {
 
     }
 
-    public static int[] intersection(int[] arr1 , int arr2){
-        
-                    
+    public static int[] intersection(int[] arr1 , int[] arr2){
+        int[] result = new int[arr1.length];
+        int j = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            for (int k = 0; k < arr2.length; k++) {
+                if (arr1[i] == arr2[k]) {
+                    result[j] = arr1[i];
+                    j++;
+                    }
+                    }
+                    }
+                    int[] temp = new int[j];
+                    System.arraycopy(result, 0, temp, 0, j);
+                    return temp;
     }
 }
