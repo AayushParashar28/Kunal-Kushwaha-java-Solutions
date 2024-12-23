@@ -8,17 +8,25 @@ public class SearchInRotatedSortedArray {
 
         int[] arr = new int[n];
 
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter Array at " + "index : ");
             arr[i] = s.nextInt();
-         }
+        }
+        System.out.print("Enter Target Element : ");
+        int target = s.nextInt();
+
+        int ans = search(arr, target);
+        if (ans == -1)
+            System.out.println("Element Not Found");
+        else
+            System.out.println("Element Found at Index : " + ans);
     }
 
-    public int search(int[] nums, int target) {
+    public static int search(int[] nums, int target) {
         int pivot = findPivot(nums);
 
         if (pivot == -1) {
-            return binarySearch(nums, target, 0 , nums.length - 1);
+            return binarySearch(nums, target, 0, nums.length - 1);
         }
 
         if (nums[pivot] == target) {
@@ -32,7 +40,7 @@ public class SearchInRotatedSortedArray {
     }
 
     static int binarySearch(int[] arr, int target, int start, int end) {
-        while(start <= end) {
+        while (start <= end) {
             int mid = start + (end - start) / 2;
             if (target < arr[mid]) {
                 end = mid - 1;
@@ -54,7 +62,7 @@ public class SearchInRotatedSortedArray {
                 return mid;
             }
             if (mid > start && arr[mid] < arr[mid - 1]) {
-                return mid-1;
+                return mid - 1;
             }
             if (arr[mid] <= arr[start]) {
                 end = mid - 1;
