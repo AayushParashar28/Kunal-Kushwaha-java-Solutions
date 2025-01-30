@@ -8,7 +8,6 @@ public class firstSort {
         
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            
             System.out.print("Enter Array element : ");
             arr[i] =  s.nextInt();
         }
@@ -22,6 +21,8 @@ public class firstSort {
     public static int[] sort(int[] arr){
         
         for(int i = 0 ; i < arr.length; i++){
+
+            boolean swapped = false;
            for(int j = i+1; j < arr.length; j++){
             if(arr[i]>arr[j]){
                 int temp = arr[i];
@@ -29,6 +30,10 @@ public class firstSort {
                 arr[j] = temp;
             }else{
                 continue;
+            }
+
+            if(!swapped){
+                break;
             }
            }
         }
