@@ -16,7 +16,7 @@ public class CycleSort {
         
     }
 
-    static int[] cycleSort(int[] arr) {
+    static void cycleSort(int[] arr) {
     
     }
 }
