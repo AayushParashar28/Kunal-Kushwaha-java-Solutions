@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CycleSort {
@@ -13,10 +14,31 @@ public class CycleSort {
             arr[i] = s.nextInt();
         }
 
+        System.out.println("Given Array is :" + Arrays.toString(arr));
+
+        cycleSort(arr);
+        System.out.println("Sorted Array is :" + Arrays.toString(arr));
+
         
     }
 
     static void cycleSort(int[] arr) {
-    
+        int i = 0;
+        while(i < arr.length){
+            int correct = arr[i] - 1;
+            if(arr[i] != arr[correct]){
+                swap(arr, i, correct);
+            }else{
+                i++;
+            }
+        }
+    }
+
+    static void swap(int[] arr , int start, int end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
     }
 }
+
+//cyclic sort must be in range from 1 to N.
