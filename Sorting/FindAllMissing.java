@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class FindAllMissing {
@@ -14,11 +16,30 @@ public class FindAllMissing {
         }
 
         System.out.println(Arrays.toString(arr));
-
+        
+        List<Integer> ans = new ArrayList<>();
+        ans = findDisappearedNumbers(arr);
+        System.out.println(ans);
 
     }
 
-    static int[] find(int[] arr){
+    static List<Integer> findDisappearedNumbers(int[] nums) {
+        boolean[] isAvailable = new boolean[nums.length];
+
+        for(int i = 0; i < nums.length ; i++){
+            isAvailable[nums[i] - 1] = true;
+        }
+
+        List<Integer> ans = new ArrayList<>();
+
+        for(int i = 0; i < nums.length ; i++){
+            if(!isAvailable[i]){
+                ans.add(i+1);
+            }
+        }
+
+        return ans;
+
         
     }
 }
